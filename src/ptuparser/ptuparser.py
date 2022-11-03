@@ -22,17 +22,17 @@ import os
 import math
 
 class ptu(object):
-
-    trace = []
-    trace_binned = {'time':[], 'count':[]}
-    trace_binned_gcd = {'time':[], 'count':[]}
-    file_name = []
-    file_name_wo_ext = []
-    xlim = (0, -1)
-    bin_size = 1e-3
-    bin_gcd = 1e-3
-    globRes = 0
-    version = 0
+    def __init__(self):
+        self.trace = []
+        self.trace_binned = {'time':[], 'count':[]}
+        self.trace_binned_gcd = {'time':[], 'count':[]}
+        self.file_name = []
+        self.file_name_wo_ext = []
+        self.xlim = (0, -1)
+        self.bin_size = 1e-3
+        self.bin_gcd = 1e-3
+        self.globRes = 0
+        self.version = 0
 
     def read_ptu(self, file_name):
         # Tag Types
