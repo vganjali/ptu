@@ -21,7 +21,7 @@ import io
 import os
 import math
 
-class ptu(object):
+class PTU(object):
     def __init__(self):
         self.trace = []
         self.trace_binned = {'time':[], 'count':[]}
