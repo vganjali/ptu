@@ -1,6 +1,6 @@
 [project]
 name = "ptuparser"
-version = "0.0.4"
+version = "0.0.6"
 authors = [
   { name="Vahid Ganjalizadeh", email="vganjali@ucsc.edu" }
 ]

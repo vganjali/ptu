@@ -8,7 +8,7 @@
 # synchronization requirements such as image scanning. 
 
 # T Mode data are written to an output file [filename]
-# We do not keep it in memory because of the huge amout of memory
+# We do not keep it in memory because of the huge amount of memory
 # this would take in case of large files. Of course you can change this, 
 # e.g. if your files are not too big. 
 # Otherwise it is best process the data on the fly and keep only the results.
@@ -457,7 +457,7 @@ class PTU(object):
             np.add.reduceat(self.trace_binned_gcd['count'], range(0,len(self.trace_binned_gcd['count']),_bin_div), dtype=np.uint64)
 
     def load_file(self, filename):
-        self.read_ptu(self, filename)
+        self.read_ptu(filename)
         records = np.fromfile(os.path.splitext(filename)[0]+'_cache.dat', dtype=[('record', np.uint32)])
         self.trace = {'special':np.bitwise_and(np.right_shift(records['record'],31), 0x01).astype(np.byte),'channel':np.bitwise_and(np.right_shift(records['record'],25), 0x3F).astype(np.byte),'timetag':np.bitwise_and(records['record'], 0x1FFFFFF).astype(np.uint32)}
         self.trace_binned = {'time': [], 'count': []}
